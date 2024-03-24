@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { CiLocationOn, CiDollar, CiPhone } from "react-icons/ci";
+import { CiLocationOn, CiDollar, CiPhone, CiMail } from "react-icons/ci";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { saveJobApplication } from "../../Utility/localStorage";
@@ -14,13 +14,14 @@ const JobDetails = () => {
     // console.log(job)
     const { logo, job_title, company_name, remote_or_onsite
         , location, job_type, salary, job_description,
-        job_responsibility, educational_requirements,
+        job_responsibility, educational_requirements, contact_information,
         experiences } = job;
 
-        const handleappliedtostify = () => {
-            saveJobApplication(intid)
-            toast('Application Submit')
-        }
+    const handleappliedtostify = () => {
+        saveJobApplication(intid)
+        toast('Application Submit')
+    }
+    // console.log(contact_information)
 
     return (
         <div>
@@ -55,7 +56,11 @@ const JobDetails = () => {
                         <hr />
                         <div>
                             <p className=" items-center mt-5"> <CiPhone className="mr-2 inline" />
-                                <span className="font-medium"> Phone : </span> </p>
+                                <span className="font-medium"> Phone :{contact_information.phone} </span> </p>
+                            <p className=" items-center mt-5"> <CiMail className="mr-2 inline" />
+                                <span className="font-medium"> Email :{contact_information.email} </span> </p>
+                            <p className=" items-center mt-5"> <CiLocationOn className="mr-2 inline" />
+                                <span className="font-medium"> Address :{contact_information.address} </span> </p>
                         </div>
 
                     </div>

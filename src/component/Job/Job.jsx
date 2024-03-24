@@ -6,8 +6,8 @@ const Job = ({ job }) => {
         job_responsibility, educational_requirements,
         experiences } = job;
     return (
-        <div className="card card-compact bg-base-100 shadow-xl">
-            <figure><img src={logo} alt="Shoes" /></figure>
+        <div className="p-4 border border-gray-500 rounded-md shadow-lg card card-compact bg-base-100">
+            <div className="ml-6"><img className="" src={logo} alt="Shoes" /></div>
             <div className="card-body">
                 <h2 className="card-title">{job_title}</h2>
                 <p>{company_name}</p>
@@ -22,7 +22,7 @@ const Job = ({ job }) => {
                     <h2 className="flex mr-4"> <CiLocationOn className="text-xl mr-2" /> {location}</h2>
                     <h2 className="flex"> <CiDollar className="text-xl mr-2" /> {salary}</h2>
                 </div>
-                <div className="card-actions ">
+                <div className="card-actions">
                     <Link to={`/job/${id}`}><button className="btn btn-primary">View Details</button></Link>
                 </div>
             </div>
